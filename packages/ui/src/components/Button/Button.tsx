@@ -6,5 +6,5 @@ export interface ButtonProps extends MuiButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
-  return <MuiButton {...props}>{children}</MuiButton>;
+  return <MuiButton sx={{ backgroundColor: 'red' }} {...props}>test</MuiButton>;
 }; 

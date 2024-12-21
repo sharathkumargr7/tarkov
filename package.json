@@ -7,6 +7,11 @@
   "version": "1.0.0",
   "scripts": {
     "build": "yarn workspace @your-org/ui build",
-    "dev": "yarn workspace @your-org/ui dev"
+    "dev": "concurrently \"yarn workspace @your-org/ui watch\" \"yarn workspace @your-org/docs dev\"",
+    "storybook": "yarn workspace @your-org/docs storybook",
+    "build-storybook": "yarn workspace @your-org/docs build-storybook"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
   }
-} 
+}
