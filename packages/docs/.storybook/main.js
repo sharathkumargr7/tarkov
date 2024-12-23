@@ -32,6 +32,31 @@ const config = {
         },
       ],
     });
+
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: [
+        'style-loader',
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              auto: true,
+              localIdentName: '[name]__[local]--[hash:base64:5]',
+            },
+          },
+        },
+        'sass-loader',
+      ],
+      include: /\.module\.scss$/,
+    });
+
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      exclude: /\.module\.scss$/,
+    });
+
     config.watchOptions = {
       ...config.watchOptions,
       ignored: /node_modules\/(?!@your-org)/,

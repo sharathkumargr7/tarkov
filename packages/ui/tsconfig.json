@@ -13,6 +13,6 @@
     "strict": true,
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["src", "src/types/scss.d.ts"],
   "exclude": ["node_modules", "dist"]
 } 
